@@ -1,15 +1,17 @@
 package hu.martinfejes.api.user;
 
-import java.util.Arrays;
-
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
+import java.util.Arrays;
 
+/**
+ * Class for initializing {@link User} entities.
+ */
 @Service
 @RequiredArgsConstructor
 public class UserInitializer {
