@@ -21,3 +21,21 @@ $ mvn clean install
 # start
 $ mvn spring-boot:run
 ```
+
+## Tests
+
+To run the tests for the application:
+
+``` bash
+$ mvn test
+```
+
+## Docker for PostgreSQL database
+
+The project has a docker with a PostgreSQL database. To use it, simply run the following command:
+
+``` bash
+$ docker-compose up -d
+```
+
+> You have to have Docker and Docker Compose installed.
