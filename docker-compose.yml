@@ -1,0 +1,23 @@
+version: "3"
+services:
+
+  api-backend-psql:
+    container_name: jwt-api
+    image: postgres
+    ports:
+      - "${DOCKER_DB_PORT}:5432"
+    environment:
+      - POSTGRES_USER=${DOCKER_DB_USER}
+      - POSTGRES_PASSWORD=${DOCKER_DB_PASSWORD}
+      - POSTGRES_DB=${DOCKER_DB_NAME}
+    volumes:
+      - ${DOCKER_DATA_PATH}/postgresql:/var/lib/postgresql
+    networks:
+      - backend
+
+# for later use if needed for other services
+networks:
+#  frontend:
+#    driver: "bridge"
+  backend:
+    driver: "bridge"

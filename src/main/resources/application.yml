@@ -1,0 +1,49 @@
+server:
+  port: 8087
+
+spring:
+  profiles:
+    active: dev
+
+  datasource:
+    url: jdbc:postgresql://localhost:54321/api
+    username: api
+    password: api
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        jdbc:
+          lob:
+            non_contextual_creation: true
+    hibernate:
+      ddl-auto: create # Hibernate ddl auto (create, create-drop, validate, update)
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: Europe/Budapest
+
+security:
+  oauth2:
+    resource:
+      filter-order: 3
+  signing-key: MaYzkSjmkzPC57L
+  encoding-strength: 256
+  security-realm: Spring Boot JWT API
+  jwt:
+    client-id: testapiclient
+    client-secret: XY7kmzoNzl100
+    grant-type: password
+    scope-read: read
+    scope-write: write
+    resource-ids: testjwtresourceid
+
+logging:
+  level:
+    root: INFO
+    hu.martinfejes.api: TRACE
