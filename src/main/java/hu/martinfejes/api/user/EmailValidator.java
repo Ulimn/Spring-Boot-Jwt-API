@@ -1,6 +1,3 @@
-/**
- * 
- */
 package hu.martinfejes.api.user;
 
 import java.util.regex.Matcher;
