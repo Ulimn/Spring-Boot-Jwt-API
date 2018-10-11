@@ -17,8 +17,9 @@ spring:
         jdbc:
           lob:
             non_contextual_creation: true
-    hibernate:
-      ddl-auto: create # Hibernate ddl auto (create, create-drop, validate, update)
+    # hibernate:
+      # ddl-auto: validate # Hibernate ddl auto (create, create-drop, validate, update)
+    show-sql: true
 
   flyway:
     enabled: true
