@@ -2,6 +2,12 @@
 
 This project is a starting point for later use, serving as a skeleton.
 
+Technologies used:
+* Spring Boot
+* Spring Data Rest
+* Spring Security + JWT
+* Liquibase
+
 ## Prerequisites
 * Maven
 * JDK 8
