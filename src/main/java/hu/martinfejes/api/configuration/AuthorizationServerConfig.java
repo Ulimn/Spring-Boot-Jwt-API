@@ -1,7 +1,6 @@
 package hu.martinfejes.api.configuration;
 
-import java.util.Arrays;
-
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
@@ -15,8 +14,11 @@ import org.springframework.security.oauth2.provider.token.TokenEnhancerChain;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 
-import lombok.RequiredArgsConstructor;
+import java.util.Arrays;
 
+/**
+ * Class for configuring the authorization server.
+ */
 @Configuration
 @EnableAuthorizationServer
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
@@ -40,8 +42,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     @Value("${security.jwt.resource-ids}")
     private String resourceIds;
 
-    private @Autowired BCryptPasswordEncoder passwordEncoder;
-
+    private final BCryptPasswordEncoder passwordEncoder;
     private final TokenStore tokenStore;
     private final JwtAccessTokenConverter accessTokenConverter;
     private final AuthenticationManager authenticationManager;

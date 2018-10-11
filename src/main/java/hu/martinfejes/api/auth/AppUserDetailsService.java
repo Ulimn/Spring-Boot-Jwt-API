@@ -1,8 +1,9 @@
 package hu.martinfejes.api.auth;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import hu.martinfejes.api.user.Email;
+import hu.martinfejes.api.user.User;
+import hu.martinfejes.api.user.UserRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -11,10 +12,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 
-import hu.martinfejes.api.user.Email;
-import hu.martinfejes.api.user.User;
-import hu.martinfejes.api.user.UserRepository;
-import lombok.RequiredArgsConstructor;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Custom implementation for {@link UserDetailsService}.

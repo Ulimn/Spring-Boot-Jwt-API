@@ -1,12 +1,13 @@
 package hu.martinfejes.api.configuration;
 
+import com.fasterxml.jackson.databind.Module;
+import hu.martinfejes.api.user.web.UserModule;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.fasterxml.jackson.databind.Module;
-
-import hu.martinfejes.api.user.web.UserModule;
-
+/**
+ * Class for configuring the Jackson.
+ */
 @Configuration
 public class JacksonConfig {
 
