@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet author="Ulimn" id="changelog-004-create-user_role-table">
+        <sql dbms="postgresql" splitStatements="true" stripComments="true">
+            CREATE TABLE user_role (
+                user_id int8 NOT NULL,
+                role_id int8 NOT NULL
+            );
+
+            ALTER TABLE user_role
+                ADD CONSTRAINT fk__user_role__role FOREIGN KEY (role_id) REFERENCES ROLE;
+
+            ALTER TABLE user_role
+                ADD CONSTRAINT fk__user_role__app_user FOREIGN KEY (user_id) REFERENCES app_user;
+        </sql>
+        <rollback>
+            <dropTable tableName="user_role"/>
+        </rollback>
+    </changeSet>
+</databaseChangeLog> 
