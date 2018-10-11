@@ -1,7 +1,10 @@
 package hu.martinfejes.api.user.web;
 
-import java.security.Principal;
-
+import hu.martinfejes.api.user.Email;
+import hu.martinfejes.api.user.User;
+import hu.martinfejes.api.user.UserRepository;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.BasePathAwareController;
 import org.springframework.hateoas.Resource;
@@ -11,11 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import hu.martinfejes.api.user.Email;
-import hu.martinfejes.api.user.User;
-import hu.martinfejes.api.user.UserRepository;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
+import java.security.Principal;
 
 /**
  * Controller to handle {@link User} entities.

@@ -1,5 +1,6 @@
 package hu.martinfejes.api.user.web;
 
+import hu.martinfejes.api.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.EntityLinks;
 import org.springframework.hateoas.Link;
@@ -7,8 +8,9 @@ import org.springframework.hateoas.Resource;
 import org.springframework.hateoas.ResourceAssembler;
 import org.springframework.stereotype.Service;
 
-import hu.martinfejes.api.user.User;
-
+/**
+ * Class for assembling {@link User} resource.
+ */
 @Service
 public class UserResourceAssembler implements ResourceAssembler<User, Resource<User>> {
 

@@ -1,9 +1,13 @@
-/**
- *
- */
 package hu.martinfejes.api.user;
 
-import java.util.List;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import hu.martinfejes.api.auth.Role;
+import hu.martinfejes.api.core.AbstractEntity;
+import lombok.AccessLevel;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+import lombok.experimental.FieldDefaults;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,16 +17,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-
-import com.fasterxml.jackson.annotation.JsonProperty;
-
-import hu.martinfejes.api.auth.Role;
-import hu.martinfejes.api.core.AbstractEntity;
-import lombok.AccessLevel;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
-import lombok.experimental.FieldDefaults;
+import java.util.List;
 
 /**
  * Entity to represent {@link User}
