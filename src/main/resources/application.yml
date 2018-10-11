@@ -18,11 +18,11 @@ spring:
           lob:
             non_contextual_creation: true
     hibernate:
-      ddl-auto: create # Hibernate ddl auto (create, create-drop, validate, update)
+      ddl-auto: validate # Hibernate ddl auto (create, create-drop, validate, update)
+    show-sql: true
 
-  flyway:
-    enabled: true
-    locations: classpath:db/migration
+  liquibase:
+    enabled: false
 
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
