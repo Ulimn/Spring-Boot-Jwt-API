@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet author="Ulimn" id="changelog-005-create-brand-table">
+        <createTable tableName="brand">
+            <column name="id" type="int8">
+                <constraints nullable="false" primaryKey="true" />
+            </column>
+            <column name="name" type="varchar(255)">
+                <constraints nullable="false" primaryKey="true" />
+            </column>
+            <column name="name_slug" type="varchar(255)">
+                <constraints nullable="false" primaryKey="true" />
+            </column>
+            <column name="created_by" type="varchar(255)" />
+            <column name="created_date" type="timestamp" />
+            <column name="modified_by" type="varchar(255)" />
+            <column name="last_modified_date" type="timestamp" />
+            <column name="version" type="int8" />
+        </createTable>
+        <rollback>
+            <dropTable tableName="brand" />
+        </rollback>
+    </changeSet>
+</databaseChangeLog> 
