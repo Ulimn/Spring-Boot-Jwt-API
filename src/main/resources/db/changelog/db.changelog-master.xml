@@ -6,4 +6,5 @@
     <include file="db.changelog-001-create-app_user-table.xml" relativeToChangelogFile="true" />
     <include file="db.changelog-002-create-role-table.xml" relativeToChangelogFile="true" />
     <include file="db.changelog-004-create-user_role-table.xml" relativeToChangelogFile="true" />
+    <include file="db.changelog-005-create-brand-table.xml" relativeToChangelogFile="true" />
 </databaseChangeLog> 
