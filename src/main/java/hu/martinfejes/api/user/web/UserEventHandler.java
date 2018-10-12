@@ -38,7 +38,7 @@ class UserEventHandler {
   @HandleBeforeDelete
   @HandleBeforeLinkSave
   @HandleBeforeLinkDelete
-  @PreAuthorize("hasRole('ADMIN')")
+  // @PreAuthorize("hasRole('ADMIN')")
   public void onBeforeModify(final User entity){
     // noop
   }
